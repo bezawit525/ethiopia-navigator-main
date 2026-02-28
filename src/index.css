@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ethiopian Navigation App Design System
+   Inspired by Ethiopian culture, landscape, and the national colors
+   Colors: Warm earth tones, Ethiopian green, gold accents, subtle red highlights
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Ethiopian-inspired color palette */
+    --background: 45 20% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 45 25% 98%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 45 25% 98%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Ethiopian Green - Primary brand color */
+    --primary: 145 55% 35%;
+    --primary-foreground: 45 25% 98%;
+
+    /* Warm Sand/Earth - Secondary */
+    --secondary: 35 30% 90%;
+    --secondary-foreground: 30 20% 25%;
+
+    /* Muted earth tones */
+    --muted: 35 15% 92%;
+    --muted-foreground: 30 10% 45%;
+
+    /* Ethiopian Gold - Accent */
+    --accent: 45 90% 50%;
+    --accent-foreground: 30 20% 15%;
+
+    /* Ethiopian Red - Destructive/Alert */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 45 25% 98%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 145 55% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom Ethiopian colors */
+    --ethiopian-green: 145 55% 35%;
+    --ethiopian-gold: 45 90% 50%;
+    --ethiopian-red: 0 70% 50%;
+    --ethiopian-earth: 30 25% 35%;
+    --ethiopian-sand: 35 35% 85%;
+
+    /* Gradients */
+    --gradient-ethiopian: linear-gradient(135deg, hsl(145 55% 35%), hsl(145 55% 45%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 90% 50%), hsl(40 85% 55%));
+    --gradient-warm: linear-gradient(180deg, hsl(45 20% 97%), hsl(35 25% 93%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(30 10% 15% / 0.1);
+    --shadow-medium: 0 8px 30px -8px hsl(30 10% 15% / 0.15);
+    --shadow-glow: 0 0 30px hsl(145 55% 35% / 0.2);
+
+    /* Sidebar - kept for compatibility */
+    --sidebar-background: 45 25% 98%;
+    --sidebar-foreground: 30 10% 15%;
+    --sidebar-primary: 145 55% 35%;
+    --sidebar-primary-foreground: 45 25% 98%;
+    --sidebar-accent: 35 30% 90%;
+    --sidebar-accent-foreground: 30 20% 25%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 145 55% 35%;
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 45 20% 95%;
+
+    --card: 30 15% 12%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 30 15% 12%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 145 50% 45%;
+    --primary-foreground: 30 15% 10%;
+
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 45 20% 95%;
+
+    --muted: 30 10% 20%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 45 85% 55%;
+    --accent-foreground: 30 15% 10%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 45 20% 95%;
+
+    --border: 30 10% 22%;
+    --input: 30 10% 22%;
+    --ring: 145 50% 45%;
+
+    --ethiopian-green: 145 50% 45%;
+    --ethiopian-gold: 45 85% 55%;
+    --ethiopian-red: 0 65% 45%;
+
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 45 20% 95%;
+    --sidebar-primary: 145 50% 45%;
+    --sidebar-primary-foreground: 30 15% 10%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 45 20% 95%;
+    --sidebar-border: 30 10% 22%;
+    --sidebar-ring: 145 50% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Outfit', 'Noto Sans Ethiopic', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Noto Sans Ethiopic', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Ethiopian-style buttons */
+  .btn-ethiopian {
+    @apply bg-primary text-primary-foreground font-medium px-6 py-3 rounded-xl;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-gold {
+    background: var(--gradient-gold);
+    @apply text-foreground font-semibold px-6 py-3 rounded-xl;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  /* Glass morphism card */
+  .glass-card {
+    @apply bg-card/90 backdrop-blur-xl rounded-2xl border border-border/50;
+    box-shadow: var(--shadow-medium);
+  }
+
+  /* Search input styling */
+  .search-input {
+    @apply w-full px-5 py-4 rounded-xl bg-background border border-border;
+    @apply text-foreground placeholder:text-muted-foreground;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary;
+  }
+
+  /* Route card */
+  .route-card {
+    @apply p-4 rounded-xl bg-secondary/50 border border-border/50;
+    @apply transition-all duration-200 hover:bg-secondary;
+  }
+
+  /* Navigation instruction */
+  .nav-instruction {
+    @apply flex items-start gap-3 p-3 rounded-lg;
+    @apply transition-colors duration-200 hover:bg-muted/50;
+  }
+
+  /* Floating panel */
+  .floating-panel {
+    @apply absolute z-50 glass-card p-4;
+    box-shadow: var(--shadow-medium);
+  }
+
+  /* Mode toggle button */
+  .mode-btn {
+    @apply px-4 py-2 rounded-lg font-medium text-sm;
+    @apply transition-all duration-200;
+    @apply border border-transparent;
+  }
+
+  .mode-btn.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .mode-btn:not(.active) {
+    @apply bg-muted text-muted-foreground hover:bg-secondary;
+  }
+
+  /* Language toggle */
+  .lang-toggle {
+    @apply px-3 py-1.5 rounded-lg text-sm font-medium;
+    @apply transition-all duration-200;
+  }
+
+  .lang-toggle.active {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .lang-toggle:not(.active) {
+    @apply bg-muted/50 text-muted-foreground hover:bg-muted;
+  }
+
+  /* Map marker pulse animation */
+  .marker-pulse {
+    animation: pulse-ring 2s ease-out infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  /* Loading shimmer */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--secondary)) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Slide up animation */
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* Leaflet overrides for Ethiopian theme */
+.leaflet-container {
+  font-family: 'Outfit', 'Noto Sans Ethiopic', system-ui, sans-serif !important;
+  background: hsl(var(--background));
+}
+
+.leaflet-popup-content-wrapper {
+  @apply rounded-xl shadow-lg border border-border/50;
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.leaflet-popup-tip {
+  background: hsl(var(--card)) !important;
+}
+
+.leaflet-control-zoom {
+  @apply rounded-xl overflow-hidden border-0;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.leaflet-control-zoom a {
+  @apply bg-card text-foreground border-border;
+}
+
+.leaflet-control-zoom a:hover {
+  @apply bg-muted;
+}
