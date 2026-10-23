@@ -166,7 +166,7 @@ This project is open source. See the repository for license details.
 
 ## 👩‍💻 Author
 
-**Bezawit Hayle**
+**Bezawit Hayalu**
 
 ---
 
